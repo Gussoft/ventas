@@ -1,0 +1,25 @@
+        GenerarReporte gr;
+        gr = new GenerarReporte();
+        String fecha1 = Fecha.formatoFecha(dcDesde.getText());
+        String fecha2 = Fecha.formatoFecha(dcHasta.getText());
+        gr.MostrarReporte2Parametros(System.getProperty("user.dir")+"/Reportes/"+carpeta+"/"+jasper+".jasper", "Reporte de ventas", fecha1, fecha2);
+        gr.cerrar();
+
+
+
+        jLabel6.setText(System.getenv("COMPUTERNAME"));
+        jLabel7.setText(System.getProperty("user.name"));
+        jLabel8.setText(System.getenv("PROCESSOR_IDENTIFIER"));
+        jLabel9.setText(System.getProperty("os.name"));
+        jLabel10.setText(System.getProperty("java.version"));
+
+
+
+SELECT VENTAS.IDVENTAS, CLIENTE.NOMBRE, CLIENTE.DIRECCION, CLIENTE.DNI, 
+VENDEDOR.NOMBRE AS VEN, PRODUCTO.NOMBRE AS PRO, DETALLE_VENTA.CANTIDAD, DETALLE_VENTA.PRECIOV,VENTAS.NUMEROSERIE, 
+VENTAS.FECHAVENTA, VENTAS.MONTO FROM ((((VENTAS 
+INNER JOIN CLIENTE ON VENTAS.IDCLIENTE = CLIENTE.IDCLIENTE)
+INNER JOIN detalle_venta ON VENTAS.IDVENTAS = detalle_venta.idVentas)
+INNER JOIN VENDEDOR ON VENTAS.IDVENDEDOR = VENDEDOR.IDVENDEDOR)
+INNER JOIN PRODUCTO ON  DETALLE_VENTA.IDPRODUCTO = PRODUCTO.IDPRODUCTO)
+WHERE DETALLE_VENTA.idVentas = $P{cod};

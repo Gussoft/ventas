@@ -1,0 +1,27 @@
+ 	String fecha = dcFecha.getText();
+        String fechas = Fecha.formatoFecha(fecha);
+        txtFecha.setText(fechas);
+
+
+ 	lblFechahoy.setText(Fecha.fechaReporte());
+        lblTotalFacturas.setText(generarCodigos.getCantidad("select COUNT(*) from factura where fac_fecha = '"+Fecha.fechaReporte()+"'"));
+        lblTotalVentas.setText("S/. "+generarCodigos.getDecimales("select SUM(fac_total) from factura where fac_fecha = '"+Fecha.fechaReporte()+"'"));
+      
+
+public void salir() {
+        int rpta = Mensajes.confirmar("Seguro que desea salir del sistema");
+        if (rpta == 0) {
+            String msg = ControlLogeo.desLogeo();
+            System.exit(0);
+        }
+    }
+
+CREATE TABLE `bd_frans`.`registro` (
+  `idregistro` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `user` VARCHAR(45) NULL,
+  `fecha` VARCHAR(50) NULL,
+  `hora` VARCHAR(12) NULL,
+  `estado` VARCHAR(1) NULL,
+  PRIMARY KEY (`idregistro`),
+  UNIQUE INDEX `idregistro_UNIQUE` (`idregistro` ASC) VISIBLE);
