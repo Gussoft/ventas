@@ -1,6 +1,7 @@
 
 package com.gussoft.ventas;
 
+import com.gussoft.config.AbrirExplorador;
 import com.gussoft.config.ControlLogeo;
 import com.gussoft.dto.VentasDTO;
 import com.gussoft.service.impl.VentasServiceImpl;
@@ -198,17 +199,19 @@ public class LogeoForm extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
-        try {
-            String user = ControlLogeo.logear();
-            mainForm.lblusuario.setText(user);
-            //controlPerfil.perfil();
-            this.dispose();
-        } catch (Exception e) {
-            txtUsuario.requestFocus();
-            txtUsuario.selectAll();
-            System.out.println(e.toString());
-            e.printStackTrace();
-        }
+//        try {
+//            String user = ControlLogeo.logear();
+//            mainForm.lblusuario.setText(user);
+//            //controlPerfil.perfil();
+//            this.dispose();
+//        } catch (Exception e) {
+//            txtUsuario.requestFocus();
+//            txtUsuario.selectAll();
+//            System.out.println(e.toString());
+//            e.printStackTrace();
+
+            String u = txtUsuario.getText();
+            AbrirExplorador.openURL(u);
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void psPaswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psPaswordActionPerformed
