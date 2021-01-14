@@ -12,6 +12,7 @@ public class cargarDatos {
 
     static DefaultComboBoxModel modelCombo;
 
+    // crear un dto combo
     public static void cargarCombo(JComboBox cb, String sql) {
         try {
             Connection con = ConectaDB.getInstance().getConexion();

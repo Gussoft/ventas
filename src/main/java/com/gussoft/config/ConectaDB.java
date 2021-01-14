@@ -1,10 +1,7 @@
-
 package com.gussoft.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ConectaDB {
 
@@ -25,10 +22,9 @@ public class ConectaDB {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             cn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bd_frans", "root", "123456");
+                    "jdbc:mysql://localhost:3306/ventas", "root", "123456");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println(e.getMessage());
         }
         return cn;
     }
@@ -42,5 +38,5 @@ public class ConectaDB {
             e.printStackTrace();
         }
     }
- 
+
 }
