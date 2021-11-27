@@ -10,7 +10,6 @@ public class ConvertNumberToLeters {
     private final String[] CENTENAS = {"", "ciento ", "doscientos ", "trecientos ", "cuatrocientos ", "quinientos ", "seiscientos ",
             "setecientos ", "ochocientos ", "novecientos "};
 
-    public ConvertNumberToLeters() {}
 /*
     public static void main(String[] args) {
         ConvertNumToLetras con = new ConvertNumToLetras();
