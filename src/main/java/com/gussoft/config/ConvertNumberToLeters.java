@@ -12,12 +12,13 @@ public class ConvertNumberToLeters {
 
 /*
     public static void main(String[] args) {
-        ConvertNumToLetras con = new ConvertNumToLetras();
+        ConvertNumberToLeters con = new ConvertNumberToLeters();
         //for (int i = 0; i <= 2000000; i = i +100) {
-            String num = "1056251";//String.valueOf(i);
-            System.out.println(con.ConverterEnterosWithDecimals(num, true, "Intis"));
-            System.out.println(con.ConverterEnteros(num, true));
-       // }
+        String num = "5682332.19";//String.valueOf(i);
+        System.out.println("Numero Ingresado = " + num);
+        System.out.println(con.ConverterEnterosWithDecimals(num, true, "Intis"));
+        System.out.println(con.ConverterEnteros(num, true));
+        // }
     }
 */
     public String ConverterEnterosWithDecimals(String numero, boolean mayusculas, String moneda) {
@@ -56,7 +57,7 @@ public class ConvertNumberToLeters {
                 return (literal + parte_decimal);
             }
         } else {//error, no se puede convertir
-            return literal = null;
+            return literal = "No se puede procesar el numero ingresado!";
         }
     }
 
@@ -82,7 +83,7 @@ public class ConvertNumberToLeters {
                 return literal.toLowerCase();
             }
         } else {//error, no se puede convertir
-            return literal = "Error no se puede convertir - Solo Numeros Enteros!";
+            return literal = "Error no se puede convertir - Solo Numeros Enteros, Pendejo!";
         }
     }
 
