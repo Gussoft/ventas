@@ -8,7 +8,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
 
-public class cargarDatos {
+public class CargarDatos {
 
     static DefaultComboBoxModel modelCombo;
 
